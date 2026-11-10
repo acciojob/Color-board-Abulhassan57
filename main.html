@@ -54,9 +54,9 @@
 
         const div=document.createElement("div")
 
-        div.classList.add("square")
+        square.classList.add("square")
 
-        div.addEventListener("mouseenter",(e)=>{
+        square.addEventListener("mouseenter",(e)=>{
             console.log("hover effect")
 
             const red = Math.floor(Math.random()*256)
@@ -73,7 +73,7 @@
                 e.target.style.backgroundColor=""
             },1000)
         })
-        fragment.appendChild(800)
+        fragment.appendChild(square)
     }
     container.append(fragment)
 
