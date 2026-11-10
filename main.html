@@ -3,12 +3,82 @@
 <html>
 
 <head>
+	<style>
+		  *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        /* height: 80vh; */
+        width: 80vw;
+        background-color: black;
+        display: grid;
+        grid-template-columns: repeat(40,1fr);
+        grid-template-rows: repeat(20,1fr);
+        gap: 4px;
+    }
+    .box{
+    
+        background-color:grey;
+        border-radius: 15%;
+        cursor: pointer;
+        transition: background 0.3s;
+        aspect-ratio: 1;
+    }
+	</style>
+	
 	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+	 <div class="container">
+
+    </div>
+	
 	<!-- the entire body must be written by student -->
     <script type="text/javascript" src="./script.js">
+
+		const container=document.querySelector(".container")
+
+    const fragment=document.createDocumentFragment()
+
+    for(let i=0; i<800; i++){
+
+        const div=document.createElement("div")
+
+        div.classList.add("box")
+
+        div.addEventListener("mouseenter",(e)=>{
+            console.log("hover effect")
+
+            const red = Math.floor(Math.random()*256)
+            const green = Math.floor(Math.random()*256)
+            const blue = Math.floor(Math.random()*256)
+
+            e.target.style.boxShodow="1px 1px 1px black"
+
+            e.target.style.backgroundColor=`rgb(${red},${green},${blue})`
+        })
+
+        div.addEventListener("mouseout",(e)=>{
+            setTimeout(()=>{
+                e.target.style.backgroundColor=""
+            },500)
+        })
+        fragment.appendChild(div)
+    }
+    container.append(fragment)
+
+    console.log(fragment)
+		
 </script>
 
 </body>
