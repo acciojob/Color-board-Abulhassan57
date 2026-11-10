@@ -25,7 +25,7 @@
         grid-template-rows: repeat(20,1fr);
         gap: 4px;
     }
-    .box{
+    .square{
     
         background-color:grey;
         border-radius: 15%;
@@ -40,7 +40,7 @@
 
 <body>
 	 <div class="container">
-
+	<div  class="square">
     </div>
 	
 	<!-- the entire body must be written by student -->
@@ -54,7 +54,7 @@
 
         const div=document.createElement("div")
 
-        div.classList.add("box")
+        div.classList.add("square")
 
         div.addEventListener("mouseenter",(e)=>{
             console.log("hover effect")
@@ -71,7 +71,7 @@
         div.addEventListener("mouseout",(e)=>{
             setTimeout(()=>{
                 e.target.style.backgroundColor=""
-            },500)
+            },1000)
         })
         fragment.appendChild(div)
     }
