@@ -40,11 +40,11 @@
 
 <body>
 	 <div class="container">
-	<div  class="square">
+	<!-- <div  class="square"> -->
     </div>
 	
 	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
+    <script >
 
 		const container=document.querySelector(".container")
 
@@ -63,7 +63,7 @@
             const green = Math.floor(Math.random()*256)
             const blue = Math.floor(Math.random()*256)
 
-            e.target.style.boxShodow="1px 1px 1px black"
+            e.target.style.boxShadow="1px 1px 1px black"
 
             e.target.style.backgroundColor=`rgb(${red},${green},${blue})`
         })
@@ -73,7 +73,7 @@
                 e.target.style.backgroundColor=""
             },1000)
         })
-        fragment.appendChild(square)
+        fragment.appendChild(div)
     }
     container.append(fragment)
 
