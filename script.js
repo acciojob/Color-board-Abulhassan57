@@ -1,37 +1,36 @@
-//your JS code here. If required.
- <script >
 
-		const container=document.querySelector(".container")
+const container = document.querySelector(".container");
 
-    const fragment=document.createDocumentFragment()
+const fragment = document.createDocumentFragment();
 
-    for(let i=0; i<800; i++){
+for (let i = 0; i < 800; i++) {
 
-        const div=document.createElement("div")
+    const div = document.createElement("div");
 
-        div.classList.add("square")
+    div.classList.add("square");
 
-        div.addEventListener("mouseenter",(e)=>{
-            // console.log("hover effect")
+    let timer;
 
-            const red = Math.floor(Math.random()*256)
-            const green = Math.floor(Math.random()*256)
-            const blue = Math.floor(Math.random()*256)
+    div.addEventListener("mouseenter", (e) => {
 
-            e.target.style.boxShadow="1px 1px 1px black"
+        clearTimeout(timer);
 
-            e.target.style.backgroundColor=`rgb(${red},${green},${blue})`
-        })
+        const red = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
 
-        div.addEventListener("mouseout",(e)=>{
-            setTimeout(()=>
-                e.target.style.backgroundColor="grey"
-            },1000)
-        })
-        fragment.appendChild(div)
-    }
-    container.append(fragment)
+        e.target.style.backgroundColor =
+            `rgb(${red}, ${green}, ${blue})`;
+    });
+    div.addEventListener("mouseout", (e) => {
 
-    // console.log(fragment)
-		
+        timer = setTimeout(() => {
+            e.target.style.backgroundColor = "grey";
+        }, 1000);
+
+    });
+
+    fragment.appendChild(div);
+}
+container.append(fragment);
 </script>
