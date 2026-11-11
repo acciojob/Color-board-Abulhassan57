@@ -57,7 +57,7 @@
         div.classList.add("square")
 
         div.addEventListener("mouseenter",(e)=>{
-            console.log("hover effect")
+            // console.log("hover effect")
 
             const red = Math.floor(Math.random()*256)
             const green = Math.floor(Math.random()*256)
@@ -69,15 +69,15 @@
         })
 
         div.addEventListener("mouseout",(e)=>{
-            setTimeout(()=>
+            // setTimeout(()=>
                 e.target.style.backgroundColor="grey"
-            },1000)
+            // },1000)
         })
         fragment.appendChild(div)
     }
     container.append(fragment)
 
-    console.log(fragment)
+    // console.log(fragment)
 		
 </script>
 
