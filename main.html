@@ -17,7 +17,7 @@
         align-items: center;
     }
     .container{
-        /* height: 80vh; */
+        height: 80vh;
         width: 80vw;
         background-color: black;
         display: grid;
@@ -69,9 +69,9 @@
         })
 
         div.addEventListener("mouseout",(e)=>{
-            setTimeout(()=>{
+            // setTimeout(()=>
                 e.target.style.backgroundColor="grey"
-            },1000)
+            // },1000)
         })
         fragment.appendChild(div)
     }
