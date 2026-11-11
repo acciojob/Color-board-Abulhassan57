@@ -30,7 +30,7 @@
         background-color:grey;
         border-radius: 15%;
         cursor: pointer;
-       transition: background-color 1s ease;
+       transition: background-color 1s smooth;
         aspect-ratio: 1;
     }
 	</style>
@@ -69,10 +69,10 @@
         })
 
         div.addEventListener("mouseout",(e)=>{
-            // setTimeout(()=>
+            setTimeout(()=>
                 e.target.style.backgroundColor="grey"
-            // },1000)
-        },1000)
+            },1000)
+        })
         fragment.appendChild(div)
     }
     container.append(fragment)
